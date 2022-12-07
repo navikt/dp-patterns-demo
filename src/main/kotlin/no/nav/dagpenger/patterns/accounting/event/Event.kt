@@ -3,6 +3,7 @@ package no.nav.dagpenger.patterns.accounting.event
 import no.nav.dagpenger.patterns.accounting.AccountNumber
 import no.nav.dagpenger.patterns.accounting.Money
 import no.nav.dagpenger.patterns.accounting.Vendor
+import no.nav.dagpenger.patterns.accounting.entry.Entry
 import java.time.LocalDateTime
 
 interface Event {
@@ -18,6 +19,10 @@ interface Event {
     fun accountNumber(): AccountNumber
     fun whenOccured(): LocalDateTime
     fun whenNoticed(): LocalDateTime
+
+    fun isProcessed(): Boolean
+    fun getResultingEntries(): Set<Entry>?
+    fun addResultingEntry(arg: Entry)
 }
 
 interface Sale : Event {
