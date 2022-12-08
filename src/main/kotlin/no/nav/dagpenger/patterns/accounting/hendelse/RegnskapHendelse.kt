@@ -1,6 +1,6 @@
 package no.nav.dagpenger.patterns.accounting.hendelse
 
-import no.nav.dagpenger.patterns.accounting.postering.Postering
+import no.nav.dagpenger.patterns.accounting.postering.IPostering
 import java.time.LocalDateTime
 
 class RegnskapHendelse(
@@ -9,7 +9,7 @@ class RegnskapHendelse(
     private val oppdaget: LocalDateTime,
     private val kunde: Kunde
 ) {
-    private val resulterendePosteringer = HashSet<Postering>()
+    private val resulterendePosteringer = HashSet<IPostering>()
 
     fun kunde() = kunde
 
@@ -19,7 +19,7 @@ class RegnskapHendelse(
 
     fun oppdaget() = oppdaget
 
-    fun leggTilPostering(postering: Postering) {
+    fun leggTilPostering(postering: IPostering) {
         resulterendePosteringer.add(postering)
     }
 

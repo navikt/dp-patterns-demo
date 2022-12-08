@@ -1,9 +1,7 @@
 package no.nav.dagpenger.patterns.accounting.hendelse
 
 import no.nav.dagpenger.patterns.accounting.Kontonummer
-import no.nav.dagpenger.patterns.accounting.Leverandør
-import no.nav.dagpenger.patterns.accounting.Penger
-import no.nav.dagpenger.patterns.accounting.postering.Postering
+import no.nav.dagpenger.patterns.accounting.postering.IPostering
 import java.time.LocalDateTime
 
 interface Hendelse {
@@ -21,8 +19,8 @@ interface Hendelse {
     fun oppdaget(): LocalDateTime
 
     fun erBehandlet(): Boolean
-    fun posteringer(): Set<Postering>
-    fun leggTilPostering(postering: Postering)
+    fun posteringer(): Set<IPostering>
+    fun leggTilPostering(postering: IPostering)
 }
 
 
