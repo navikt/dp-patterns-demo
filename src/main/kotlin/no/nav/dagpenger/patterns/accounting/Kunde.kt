@@ -19,5 +19,3 @@ class Kunde(private val navn: String){
 
     fun tjenesteAvtale() = tjenesteAvtale
 }
-
-class TjenesteAvtale {}
