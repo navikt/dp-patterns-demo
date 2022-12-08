@@ -1,6 +1,6 @@
 package no.nav.dagpenger.patterns.accounting
 
-import no.nav.dagpenger.patterns.accounting.hendelse.Posteringsregel
+import no.nav.dagpenger.patterns.accounting.postering.Posteringsregel
 import java.time.LocalDateTime
 
 class TemporalCollection {

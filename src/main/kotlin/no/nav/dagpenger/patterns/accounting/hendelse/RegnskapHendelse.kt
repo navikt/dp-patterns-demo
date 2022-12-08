@@ -1,6 +1,7 @@
 package no.nav.dagpenger.patterns.accounting.hendelse
 
 import no.nav.dagpenger.patterns.accounting.Kunde
+import no.nav.dagpenger.patterns.accounting.postering.Posteringsregel
 import no.nav.dagpenger.patterns.accounting.postering.IPostering
 import java.time.LocalDateTime
 
@@ -20,7 +21,7 @@ class RegnskapHendelse(
 
     fun oppdaget() = oppdaget
 
-    fun leggTilPostering(postering: IPostering) {
+    fun leggTilResulterendePostering(postering: IPostering) {
         resulterendePosteringer.add(postering)
     }
 
@@ -30,4 +31,3 @@ class RegnskapHendelse(
     fun process() {} /*discussed later*/
 }
 
-class Posteringsregel
