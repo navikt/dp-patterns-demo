@@ -1,8 +1,8 @@
 package no.nav.dagpenger.patterns.accounting.hendelse
 
 import no.nav.dagpenger.patterns.accounting.Kontonummer
-import no.nav.dagpenger.patterns.accounting.Penger
 import no.nav.dagpenger.patterns.accounting.Leverandør
+import no.nav.dagpenger.patterns.accounting.Penger
 import no.nav.dagpenger.patterns.accounting.postering.Postering
 import java.time.LocalDateTime
 
@@ -38,6 +38,11 @@ interface Salg : Hendelse {
     fun mengde(): Penger
 }
 
-enum class HendelseType {
-    Salg
+
+class HendelseType(navn: String) {
+    companion object {
+        var forbruk = HendelseType("forbruk")
+        var hjelpetelefon = HendelseType("hjelpetelefon")
+    }
 }
+
