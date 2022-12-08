@@ -1,5 +1,6 @@
 package no.nav.dagpenger.patterns.accounting.hendelse
 
+import no.nav.dagpenger.patterns.accounting.Kunde
 import no.nav.dagpenger.patterns.accounting.postering.IPostering
 import java.time.LocalDateTime
 
@@ -29,5 +30,4 @@ class RegnskapHendelse(
     fun process() {} /*discussed later*/
 }
 
-class Kunde
 class Posteringsregel
