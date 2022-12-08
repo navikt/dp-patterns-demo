@@ -2,11 +2,11 @@ package no.nav.dagpenger.patterns.accounting
 
 import no.nav.dagpenger.patterns.accounting.hendelse.HendelseType
 import no.nav.dagpenger.patterns.accounting.hendelse.Mengde
-import no.nav.dagpenger.patterns.accounting.hendelse.StandardForbruk
+import no.nav.dagpenger.patterns.accounting.hendelse.ForbrukHendelse
 import org.junit.jupiter.api.Test
 import java.time.LocalDateTime
 
-internal class StandardForbrukTest {
+internal class ForbrukHendelseTest {
 
     @Test
     fun `Kan forbruke`() {
@@ -18,7 +18,7 @@ internal class StandardForbrukTest {
             }
         }
 
-        val standardForbruk = StandardForbruk(
+        val forbrukHendelse = ForbrukHendelse(
             Mengde(),
             HendelseType.forbruk,
             LocalDateTime.now(),

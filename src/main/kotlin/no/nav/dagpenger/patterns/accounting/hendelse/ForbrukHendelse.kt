@@ -3,7 +3,7 @@ package no.nav.dagpenger.patterns.accounting.hendelse
 import no.nav.dagpenger.patterns.accounting.Kunde
 import java.time.LocalDateTime
 
-class StandardForbruk(
+class ForbrukHendelse(
     private val mengde: Mengde,
     type: HendelseType,
     opprettet: LocalDateTime,
@@ -14,4 +14,4 @@ class StandardForbruk(
     fun sats() = kunde().tjenesteAvtale()?.sats()
 }
 
-class Mengde
+data class Mengde(val antall: Int)
