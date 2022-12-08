@@ -1,11 +1,11 @@
 package no.nav.dagpenger.patterns.accounting.hendelse
 
 import no.nav.dagpenger.patterns.accounting.Kunde
-import no.nav.dagpenger.patterns.accounting.postering.Posteringsregel
 import no.nav.dagpenger.patterns.accounting.postering.IPostering
+import no.nav.dagpenger.patterns.accounting.postering.Posteringsregel
 import java.time.LocalDateTime
 
-class RegnskapHendelse(
+open class RegnskapHendelse(
     private val hendelseType: HendelseType,
     private val oppstått: LocalDateTime,
     private val oppdaget: LocalDateTime,
