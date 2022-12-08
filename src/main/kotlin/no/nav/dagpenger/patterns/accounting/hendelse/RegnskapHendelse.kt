@@ -25,9 +25,13 @@ open class RegnskapHendelse(
         resulterendePosteringer.add(postering)
     }
 
-    fun finnRegel(): Posteringsregel? = null  /*discussed later*/
+    fun finnRegel(): Posteringsregel{
+        val regel  = kunde.tjenesteAvtale()?.posteringsregel(hendelseType = hendelseType, forDato = oppstått)
+        requireNotNull(regel) { "Manglende posteringsregel" }
+        return regel
+    }
 
-    //TODO: Oversett
-    fun process() {} /*discussed later*/
+    fun process() {
+        finnRegel().prosesser(this)
+    }
 }
-

@@ -11,15 +11,13 @@ internal class ForbrukHendelseTest {
     @Test
     fun `Kan forbruke`() {
 
-        val kunde = Kunde("Kunde Kundesen").let { kunde ->
-            TjenesteAvtale().let {
-                it.setSats(1.1)
-                kunde.leggTil(it)
-            }
-        }
+        val tjenesteAvtale = TjenesteAvtale()
+        tjenesteAvtale.setSats(11.0)
+        val kunde = Kunde("Kunde Kundesen")
+        kunde.leggTil(tjenesteAvtale)
 
         val forbrukHendelse = ForbrukHendelse(
-            Mengde(),
+            Mengde(10),
             HendelseType.forbruk,
             LocalDateTime.now(),
             LocalDateTime.now(),
