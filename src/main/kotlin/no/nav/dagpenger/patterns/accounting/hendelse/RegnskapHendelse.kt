@@ -1,6 +1,5 @@
-package no.nav.dagpenger.patterns.accounting
+package no.nav.dagpenger.patterns.accounting.hendelse
 
-import no.nav.dagpenger.patterns.accounting.hendelse.HendelseType
 import no.nav.dagpenger.patterns.accounting.postering.Postering
 import java.time.LocalDateTime
 

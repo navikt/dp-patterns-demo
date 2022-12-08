@@ -25,24 +25,4 @@ interface Hendelse {
     fun leggTilPostering(postering: Postering)
 }
 
-interface Salg : Hendelse {
-    fun nyttSalg(
-        kontonummer: Kontonummer,
-        oppstått: LocalDateTime,
-        oppdaget: LocalDateTime,
-        leverandør: Leverandør,
-        mengde: Penger
-    ): Salg
-
-    fun leverandør(): Leverandør
-    fun mengde(): Penger
-}
-
-
-class HendelseType(navn: String) {
-    companion object {
-        var forbruk = HendelseType("forbruk")
-        var hjelpetelefon = HendelseType("hjelpetelefon")
-    }
-}
 
