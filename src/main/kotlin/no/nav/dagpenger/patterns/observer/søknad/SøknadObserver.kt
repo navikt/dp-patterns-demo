@@ -9,6 +9,12 @@ interface SøknadObserver {
     fun søknadSlettet(uuid: UUID) {}
 }
 
+class SøknadInnsendtStatistikk : SøknadObserver {
+    override fun søknadInnsendt(uuid: UUID, innsendtTidspunkt: LocalDateTime) {
+        println("Gjør noe statistikk rundt innsendte søknader!")
+    }
+}
+
 class SøknadSlettetVarsler : SøknadObserver {
     override fun søknadSlettet(uuid: UUID) {
         println("Send ut melding til andre systemer som er avhengig av denne informasjonen")

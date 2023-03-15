@@ -8,6 +8,7 @@ fun main() {
         //Legg til alle observere
         søknad.addObserver(SøknadLogger)
         søknad.addObserver(SøknadSlettetVarsler())
+        søknad.addObserver(SøknadInnsendtStatistikk())
     }
     søknad.sendInn()
     søknad.slett()
