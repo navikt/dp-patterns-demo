@@ -21,13 +21,17 @@ internal class Søknad private constructor(private val uuid: UUID) {
 
     fun sendInn() {
         //innsendingslogikk gjøres her
-        observers.forEach { it.søknadInnsendt(uuid, LocalDateTime.now()) }
+        notifySubscribers()
     }
+
 
     fun slett() {
         //sletting foregår her
         observers.forEach { it.søknadSlettet(uuid) }
     }
 
+    private fun notifySubscribers() {
+        observers.forEach { it.søknadInnsendt(uuid, LocalDateTime.now()) }
+    }
     internal fun addObserver(observer: SøknadObserver) = observers.add(observer)
 }
